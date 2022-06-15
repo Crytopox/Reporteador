@@ -55,3 +55,11 @@ C:\Users\cryto\Desktop\Reporteador\dev\Reporteador-CR\bin\Debug\CrystalDecisions
 C:\Users\cryto\Desktop\Reporteador\dev\Reporteador-CR\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 C:\Users\cryto\Desktop\Reporteador\dev\Reporteador-CR\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\cryto\Desktop\Reporteador\dev\Reporteador-CR\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.csproj.AssemblyReference.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.csproj.SuggestedBindingRedirects.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador_CR.Form1.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador_CR.Properties.Resources.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.csproj.GenerateResource.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.csproj.CoreCompileInputs.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.exe
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.pdb

@@ -1,0 +1,8 @@
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador.csproj.AssemblyReference.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador.csproj.SuggestedBindingRedirects.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador_CR.Form1.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador_CR.Properties.Resources.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador.csproj.GenerateResource.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador.csproj.CoreCompileInputs.cache
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.exe
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Debug\Reporteador-CR.pdb

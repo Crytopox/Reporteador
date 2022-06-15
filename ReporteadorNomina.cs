@@ -8,17 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//https://stackoverflow.com/questions/23386078/how-to-remove-conditions-from-where-clause-if-parameters-are-null SQL NULL PARAMS / KEKW
+//https://www.tutorialgateway.org/sql-query-to-select-all-if-parameter-is-empty-or-null/ <- Use this first (:
+
 namespace Reporteador_CR
 {
-    public partial class Form1 : Form
+    public partial class ReporteadorNomina : Form
     {
+        public class ComboBoxItems
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
         DataSetDefault dataSet = new DataSetDefault();
+        //DataSets para los Crystal Reports
         DataSetDefaultTableAdapters.NominaAbiertaTableAdapter adapterNominaAbierta = new DataSetDefaultTableAdapters.NominaAbiertaTableAdapter();
+        //DataSets para ComboBoxes
         DataSetDefaultTableAdapters.NomCalculoAnoTableAdapter adapterNomCalculoAno = new DataSetDefaultTableAdapters.NomCalculoAnoTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoPerIDTableAdapter adapterNomCalculoPerID = new DataSetDefaultTableAdapters.NomCalculoPerIDTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoTipoNomTableAdapter adapterNomCalculoTipoNom = new DataSetDefaultTableAdapters.NomCalculoTipoNomTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoPeriodoTableAdapter adapterNomCalculoPeriodo = new DataSetDefaultTableAdapters.NomCalculoPeriodoTableAdapter();
-        public Form1()
+        public ReporteadorNomina()
         {
             InitializeComponent();
             //Crear items para los tipos de Reporte
@@ -44,10 +60,14 @@ namespace Reporteador_CR
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
+            //Desplegar el siguente menu de opciones.
             btnReporte.Show();
             btnLimpiar.Show();
             label2.Show();
-            //Mostrar las opciones correspondientes para el Reporte - Nomina Abierta
+
+        #region Nomina-Abierta
+            //Nomina Abierta
+            //Mostrar las opciones correspondientes para el Reporte
             if (cbxSelecionReporte.Text == "Nomina Abierta")
             {
                 labelOption1.Text = "Año";
@@ -69,6 +89,7 @@ namespace Reporteador_CR
                 //Llenar los campos para los combo box
                 try
                 {
+                    ComboBoxItems item = new ComboBoxItems();
                     //Llenar campos para el combo box (Año)
                     adapterNomCalculoAno.Fill(dataSet.NomCalculoAno);
                     for (int i = 0; i < dataSet.NomCalculoAno.Rows.Count; i++)
@@ -80,7 +101,9 @@ namespace Reporteador_CR
                     adapterNomCalculoPerID.Fill(dataSet.NomCalculoPerID);
                     for (int i = 0; i < dataSet.NomCalculoPerID.Rows.Count; i++)
                     {
-                        comboBoxOption2.Items.Add(dataSet.NomCalculoPerID[i].Periodo_ID);
+                        item.Text = dataSet.NomCalculoPerID[i].Periodo_ID + " - " + dataSet.NomCalculoPerID[i].Descripcion;
+                        item.Value = dataSet.NomCalculoPerID[i].Periodo_ID;
+                        comboBoxOption2.Items.Add(item);
                     }
 
                     //Llenar campos para el combo box (Periodo Nomina)
@@ -103,12 +126,13 @@ namespace Reporteador_CR
                     labelError.Text = ex.Message;
                     labelError.Show();
                 }
-
-
             }
-        }
+        #endregion Nomina-Abierta
 
-        
+        #region Nomina-Cerrada
+
+        #endregion Nomina-Cerrada
+        }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
@@ -117,21 +141,46 @@ namespace Reporteador_CR
                 CrystalReport_NominaAbierta crNominaAbierta = new CrystalReport_NominaAbierta();
                 string dir = "";
 
+            #region Generar NominaAbierta
                 if (cbxSelecionReporte.Text == "Nomina Abierta")
                 {
                     dir = @"~\CrystalReport-NominaAbierta.rpt";
-                    //adapterNominaAbierta.Fill(dataSet.NominaAbierta, *, *);
-                    /*adapterNominaAbierta.Fill(dataSet.NominaAbierta, 
-                        Convert.ToInt16(comboBoxOption1.SelectedItem), 
-                        Convert.ToByte(comboBoxOption3.SelectedItem));*/
 
+                    //Asignar Variables selecionadas de los ComboBox
+                    object year             = (comboBoxOption1.SelectedItem);
+                    string periodoID        = (comboBoxOption2.SelectedItem as ComboBoxItems).Value.ToString();
+                    string periodoNomina    = (comboBoxOption3.SelectedItem as ComboBoxItems).Value.ToString();
+                    string tipoNomina       = (comboBoxOption4.SelectedItem as ComboBoxItems).Value.ToString();
+
+                    //Pasar las variables selecionadas de los ComboBox al adaptador de NominaAbierta.
+                    //Ejecuta la query SQL y filta los datos con los campos proporcionados.
+                    adapterNominaAbierta.Fill(dataSet.NominaAbierta,
+                        Convert.ToInt16(year),
+                        Convert.ToInt16(periodoID),
+                        Convert.ToInt16(periodoNomina),
+                        Convert.ToByte(tipoNomina)
+                        );
+
+                    //Generar y mostrar el Report CrystalReport
+                    crNominaAbierta.Load(dir);
+                    crNominaAbierta.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = crNominaAbierta;
+                    crystalReportViewer1.RefreshReport();
+                }
+            #endregion Generar NominaAbierta
+
+            #region Generar NominaCerrada
+                else if (cbxSelecionReporte.Text == "Nomina Cerrada")
+                {
 
                 }
+            #endregion Generar NominaCerrada
 
-                crNominaAbierta.Load(dir);
-                crNominaAbierta.SetDataSource(dataSet);
-                crystalReportViewer1.ReportSource = crNominaAbierta;
-                crystalReportViewer1.RefreshReport();
+                else
+                {
+                    labelError.Text = "Seleciona el tipo de nomina que deseas generar!";
+                    labelError.Show();
+                }
             }
             catch (Exception ex)
             {

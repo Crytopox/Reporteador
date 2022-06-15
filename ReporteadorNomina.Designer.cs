@@ -1,7 +1,7 @@
 ﻿
 namespace Reporteador_CR
 {
-    partial class Form1
+    partial class ReporteadorNomina
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -71,62 +71,55 @@ namespace Reporteador_CR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbxSelecionReporte);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(329, 919);
+            this.panel1.Size = new System.Drawing.Size(247, 747);
             this.panel1.TabIndex = 0;
             // 
             // comboBoxOption5
             // 
             this.comboBoxOption5.FormattingEnabled = true;
-            this.comboBoxOption5.Location = new System.Drawing.Point(28, 521);
-            this.comboBoxOption5.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOption5.Location = new System.Drawing.Point(21, 423);
             this.comboBoxOption5.Name = "comboBoxOption5";
-            this.comboBoxOption5.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOption5.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOption5.TabIndex = 19;
             // 
             // comboBoxOption4
             // 
             this.comboBoxOption4.FormattingEnabled = true;
-            this.comboBoxOption4.Location = new System.Drawing.Point(28, 465);
-            this.comboBoxOption4.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOption4.Location = new System.Drawing.Point(21, 378);
             this.comboBoxOption4.Name = "comboBoxOption4";
-            this.comboBoxOption4.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOption4.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOption4.TabIndex = 18;
             // 
             // comboBoxOption3
             // 
             this.comboBoxOption3.FormattingEnabled = true;
-            this.comboBoxOption3.Location = new System.Drawing.Point(28, 412);
-            this.comboBoxOption3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOption3.Location = new System.Drawing.Point(21, 335);
             this.comboBoxOption3.Name = "comboBoxOption3";
-            this.comboBoxOption3.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOption3.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOption3.TabIndex = 17;
             // 
             // comboBoxOption2
             // 
             this.comboBoxOption2.FormattingEnabled = true;
-            this.comboBoxOption2.Location = new System.Drawing.Point(28, 357);
-            this.comboBoxOption2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOption2.Location = new System.Drawing.Point(21, 290);
             this.comboBoxOption2.Name = "comboBoxOption2";
-            this.comboBoxOption2.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOption2.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOption2.TabIndex = 16;
             // 
             // comboBoxOption1
             // 
             this.comboBoxOption1.FormattingEnabled = true;
-            this.comboBoxOption1.Location = new System.Drawing.Point(28, 289);
-            this.comboBoxOption1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxOption1.Location = new System.Drawing.Point(21, 235);
             this.comboBoxOption1.Name = "comboBoxOption1";
-            this.comboBoxOption1.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxOption1.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOption1.TabIndex = 3;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(176, 170);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(132, 138);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(127, 43);
+            this.btnLimpiar.Size = new System.Drawing.Size(95, 35);
             this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -136,10 +129,9 @@ namespace Reporteador_CR
             // 
             this.labelOption5.AutoSize = true;
             this.labelOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption5.Location = new System.Drawing.Point(23, 497);
-            this.labelOption5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOption5.Location = new System.Drawing.Point(17, 404);
             this.labelOption5.Name = "labelOption5";
-            this.labelOption5.Size = new System.Drawing.Size(51, 20);
+            this.labelOption5.Size = new System.Drawing.Size(44, 16);
             this.labelOption5.TabIndex = 14;
             this.labelOption5.Text = "label3";
             // 
@@ -147,10 +139,9 @@ namespace Reporteador_CR
             // 
             this.labelOption4.AutoSize = true;
             this.labelOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption4.Location = new System.Drawing.Point(23, 442);
-            this.labelOption4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOption4.Location = new System.Drawing.Point(17, 359);
             this.labelOption4.Name = "labelOption4";
-            this.labelOption4.Size = new System.Drawing.Size(51, 20);
+            this.labelOption4.Size = new System.Drawing.Size(44, 16);
             this.labelOption4.TabIndex = 12;
             this.labelOption4.Text = "label3";
             // 
@@ -158,10 +149,9 @@ namespace Reporteador_CR
             // 
             this.labelOption3.AutoSize = true;
             this.labelOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption3.Location = new System.Drawing.Point(23, 386);
-            this.labelOption3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOption3.Location = new System.Drawing.Point(17, 314);
             this.labelOption3.Name = "labelOption3";
-            this.labelOption3.Size = new System.Drawing.Size(51, 20);
+            this.labelOption3.Size = new System.Drawing.Size(44, 16);
             this.labelOption3.TabIndex = 10;
             this.labelOption3.Text = "label3";
             // 
@@ -169,10 +159,9 @@ namespace Reporteador_CR
             // 
             this.labelOption2.AutoSize = true;
             this.labelOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption2.Location = new System.Drawing.Point(23, 330);
-            this.labelOption2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOption2.Location = new System.Drawing.Point(17, 268);
             this.labelOption2.Name = "labelOption2";
-            this.labelOption2.Size = new System.Drawing.Size(51, 20);
+            this.labelOption2.Size = new System.Drawing.Size(44, 16);
             this.labelOption2.TabIndex = 8;
             this.labelOption2.Text = "label3";
             // 
@@ -180,10 +169,9 @@ namespace Reporteador_CR
             // 
             this.labelOption1.AutoSize = true;
             this.labelOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption1.Location = new System.Drawing.Point(23, 266);
-            this.labelOption1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOption1.Location = new System.Drawing.Point(17, 216);
             this.labelOption1.Name = "labelOption1";
-            this.labelOption1.Size = new System.Drawing.Size(51, 20);
+            this.labelOption1.Size = new System.Drawing.Size(44, 16);
             this.labelOption1.TabIndex = 6;
             this.labelOption1.Text = "label3";
             // 
@@ -191,19 +179,17 @@ namespace Reporteador_CR
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 235);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 18);
+            this.label2.Size = new System.Drawing.Size(171, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Seleciona los campos a filtrar:";
             // 
             // btnReporte
             // 
-            this.btnReporte.Location = new System.Drawing.Point(27, 170);
-            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporte.Location = new System.Drawing.Point(20, 138);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(127, 43);
+            this.btnReporte.Size = new System.Drawing.Size(95, 35);
             this.btnReporte.TabIndex = 3;
             this.btnReporte.Text = "Generar Reporte";
             this.btnReporte.UseVisualStyleBackColor = true;
@@ -211,10 +197,9 @@ namespace Reporteador_CR
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(83, 102);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelect.Location = new System.Drawing.Point(62, 83);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(161, 44);
+            this.btnSelect.Size = new System.Drawing.Size(121, 36);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "Selecionar";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -224,20 +209,18 @@ namespace Reporteador_CR
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(5, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 18);
+            this.label1.Size = new System.Drawing.Size(239, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Seleciona  el reporte que deseas generar: ";
             // 
             // cbxSelecionReporte
             // 
             this.cbxSelecionReporte.FormattingEnabled = true;
-            this.cbxSelecionReporte.Location = new System.Drawing.Point(27, 69);
-            this.cbxSelecionReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxSelecionReporte.Location = new System.Drawing.Point(20, 56);
             this.cbxSelecionReporte.Name = "cbxSelecionReporte";
-            this.cbxSelecionReporte.Size = new System.Drawing.Size(275, 24);
+            this.cbxSelecionReporte.Size = new System.Drawing.Size(207, 21);
             this.cbxSelecionReporte.TabIndex = 0;
             // 
             // crystalReportViewer1
@@ -246,11 +229,10 @@ namespace Reporteador_CR
             this.crystalReportViewer1.AutoSize = true;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(333, 4);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(250, 3);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReport_NominaAbierta1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1493, 834);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1120, 678);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -258,27 +240,26 @@ namespace Reporteador_CR
             // 
             this.labelError.AutoSize = true;
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(908, 871);
-            this.labelError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelError.Location = new System.Drawing.Point(681, 708);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(44, 16);
+            this.labelError.Size = new System.Drawing.Size(35, 13);
             this.labelError.TabIndex = 2;
             this.labelError.Text = "label3";
             // 
-            // Form1
+            // Reporteador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1827, 838);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1370, 681);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "Reporteador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Reporteador";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
