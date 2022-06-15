@@ -2756,20 +2756,20 @@ FROM         NomCalculo AS NCH INNER JOIN
                          NomPeriodos AS NP ON NCH.Periodo_ID = NP.Periodo_ID INNER JOIN
                          TBTipoNomina AS TNom ON NCH.TipoNomina_ID = TNom.TipoNomina_ID inner join
 						 conceptos as Con ON Con.Concepto_id = NCH.Concepto_id
-WHERE     (NCH.Ano = @Ano)   and Con.Tipo_IDa in (0,1) and (nch.periodo_id=@PeriodoID)
+WHERE (NCH.Ano = @Ano OR @Ano = 0) AND (NCH.Periodo_ID = @periodoID OR @periodoID = 0)
 ORDER BY  EMP.Paterno, Con.Tipo_IDa, NCH.periodo
 
 ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ano", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "Ano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodoID", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Periodo_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@periodoID", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Periodo_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetDefault.NominaAbiertaDataTable dataTable, global::System.Nullable<short> Ano, global::System.Nullable<byte> PeriodoID) {
+        public virtual int Fill(DataSetDefault.NominaAbiertaDataTable dataTable, global::System.Nullable<short> Ano, global::System.Nullable<byte> periodoID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Ano.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Ano.Value));
@@ -2777,8 +2777,8 @@ ORDER BY  EMP.Paterno, Con.Tipo_IDa, NCH.periodo
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((PeriodoID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(PeriodoID.Value));
+            if ((periodoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(periodoID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2794,7 +2794,7 @@ ORDER BY  EMP.Paterno, Con.Tipo_IDa, NCH.periodo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetDefault.NominaAbiertaDataTable GetData(global::System.Nullable<short> Ano, global::System.Nullable<byte> PeriodoID) {
+        public virtual DataSetDefault.NominaAbiertaDataTable GetData(global::System.Nullable<short> Ano, global::System.Nullable<byte> periodoID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Ano.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((short)(Ano.Value));
@@ -2802,8 +2802,8 @@ ORDER BY  EMP.Paterno, Con.Tipo_IDa, NCH.periodo
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((PeriodoID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(PeriodoID.Value));
+            if ((periodoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(periodoID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
