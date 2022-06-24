@@ -30,13 +30,11 @@ namespace Reporteador_CR
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxOption5 = new System.Windows.Forms.ComboBox();
-            this.comboBoxOption4 = new System.Windows.Forms.ComboBox();
-            this.comboBoxOption3 = new System.Windows.Forms.ComboBox();
-            this.comboBoxOption2 = new System.Windows.Forms.ComboBox();
-            this.comboBoxOption1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoNomina = new System.Windows.Forms.ComboBox();
+            this.comboBoxPeriodoNomina = new System.Windows.Forms.ComboBox();
+            this.comboBoxPeriodoID = new System.Windows.Forms.ComboBox();
+            this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.labelOption5 = new System.Windows.Forms.Label();
             this.labelOption4 = new System.Windows.Forms.Label();
             this.labelOption3 = new System.Windows.Forms.Label();
             this.labelOption2 = new System.Windows.Forms.Label();
@@ -54,13 +52,11 @@ namespace Reporteador_CR
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBoxOption5);
-            this.panel1.Controls.Add(this.comboBoxOption4);
-            this.panel1.Controls.Add(this.comboBoxOption3);
-            this.panel1.Controls.Add(this.comboBoxOption2);
-            this.panel1.Controls.Add(this.comboBoxOption1);
+            this.panel1.Controls.Add(this.comboBoxTipoNomina);
+            this.panel1.Controls.Add(this.comboBoxPeriodoNomina);
+            this.panel1.Controls.Add(this.comboBoxPeriodoID);
+            this.panel1.Controls.Add(this.comboBoxYear);
             this.panel1.Controls.Add(this.btnLimpiar);
-            this.panel1.Controls.Add(this.labelOption5);
             this.panel1.Controls.Add(this.labelOption4);
             this.panel1.Controls.Add(this.labelOption3);
             this.panel1.Controls.Add(this.labelOption2);
@@ -71,77 +67,57 @@ namespace Reporteador_CR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbxSelecionReporte);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(329, 919);
             this.panel1.TabIndex = 0;
             // 
-            // comboBoxOption5
+            // comboBoxTipoNomina
             // 
-            this.comboBoxOption5.FormattingEnabled = true;
-            this.comboBoxOption5.Location = new System.Drawing.Point(28, 521);
-            this.comboBoxOption5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxOption5.Name = "comboBoxOption5";
-            this.comboBoxOption5.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxOption5.TabIndex = 19;
+            this.comboBoxTipoNomina.FormattingEnabled = true;
+            this.comboBoxTipoNomina.Location = new System.Drawing.Point(28, 465);
+            this.comboBoxTipoNomina.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTipoNomina.Name = "comboBoxTipoNomina";
+            this.comboBoxTipoNomina.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxTipoNomina.TabIndex = 18;
             // 
-            // comboBoxOption4
+            // comboBoxPeriodoNomina
             // 
-            this.comboBoxOption4.FormattingEnabled = true;
-            this.comboBoxOption4.Location = new System.Drawing.Point(28, 465);
-            this.comboBoxOption4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxOption4.Name = "comboBoxOption4";
-            this.comboBoxOption4.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxOption4.TabIndex = 18;
+            this.comboBoxPeriodoNomina.FormattingEnabled = true;
+            this.comboBoxPeriodoNomina.Location = new System.Drawing.Point(28, 412);
+            this.comboBoxPeriodoNomina.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxPeriodoNomina.Name = "comboBoxPeriodoNomina";
+            this.comboBoxPeriodoNomina.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxPeriodoNomina.TabIndex = 17;
             // 
-            // comboBoxOption3
+            // comboBoxPeriodoID
             // 
-            this.comboBoxOption3.FormattingEnabled = true;
-            this.comboBoxOption3.Location = new System.Drawing.Point(28, 412);
-            this.comboBoxOption3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxOption3.Name = "comboBoxOption3";
-            this.comboBoxOption3.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxOption3.TabIndex = 17;
+            this.comboBoxPeriodoID.FormattingEnabled = true;
+            this.comboBoxPeriodoID.Location = new System.Drawing.Point(28, 357);
+            this.comboBoxPeriodoID.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxPeriodoID.Name = "comboBoxPeriodoID";
+            this.comboBoxPeriodoID.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxPeriodoID.TabIndex = 16;
             // 
-            // comboBoxOption2
+            // comboBoxYear
             // 
-            this.comboBoxOption2.FormattingEnabled = true;
-            this.comboBoxOption2.Location = new System.Drawing.Point(28, 357);
-            this.comboBoxOption2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxOption2.Name = "comboBoxOption2";
-            this.comboBoxOption2.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxOption2.TabIndex = 16;
-            // 
-            // comboBoxOption1
-            // 
-            this.comboBoxOption1.FormattingEnabled = true;
-            this.comboBoxOption1.Location = new System.Drawing.Point(28, 289);
-            this.comboBoxOption1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxOption1.Name = "comboBoxOption1";
-            this.comboBoxOption1.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxOption1.TabIndex = 3;
+            this.comboBoxYear.FormattingEnabled = true;
+            this.comboBoxYear.Location = new System.Drawing.Point(28, 289);
+            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxYear.TabIndex = 3;
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(176, 170);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(127, 43);
             this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // labelOption5
-            // 
-            this.labelOption5.AutoSize = true;
-            this.labelOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption5.Location = new System.Drawing.Point(23, 497);
-            this.labelOption5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelOption5.Name = "labelOption5";
-            this.labelOption5.Size = new System.Drawing.Size(51, 20);
-            this.labelOption5.TabIndex = 14;
-            this.labelOption5.Text = "label3";
             // 
             // labelOption4
             // 
@@ -201,7 +177,7 @@ namespace Reporteador_CR
             // btnReporte
             // 
             this.btnReporte.Location = new System.Drawing.Point(27, 170);
-            this.btnReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(127, 43);
             this.btnReporte.TabIndex = 3;
@@ -212,7 +188,7 @@ namespace Reporteador_CR
             // btnSelect
             // 
             this.btnSelect.Location = new System.Drawing.Point(83, 102);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(161, 44);
             this.btnSelect.TabIndex = 2;
@@ -235,7 +211,7 @@ namespace Reporteador_CR
             // 
             this.cbxSelecionReporte.FormattingEnabled = true;
             this.cbxSelecionReporte.Location = new System.Drawing.Point(27, 69);
-            this.cbxSelecionReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxSelecionReporte.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSelecionReporte.Name = "cbxSelecionReporte";
             this.cbxSelecionReporte.Size = new System.Drawing.Size(275, 24);
             this.cbxSelecionReporte.TabIndex = 0;
@@ -247,7 +223,7 @@ namespace Reporteador_CR
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(333, 4);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReport_NominaAbierta1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(1493, 834);
@@ -276,7 +252,7 @@ namespace Reporteador_CR
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReporteadorNomina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporteador";
@@ -296,18 +272,16 @@ namespace Reporteador_CR
         private System.Windows.Forms.Label labelOption1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnReporte;
-        private System.Windows.Forms.Label labelOption5;
         private System.Windows.Forms.Label labelOption4;
         private System.Windows.Forms.Label labelOption3;
         private System.Windows.Forms.Label labelOption2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label labelError;
         private CrystalReport_NominaAbierta CrystalReport_NominaAbierta1;
-        private System.Windows.Forms.ComboBox comboBoxOption1;
-        private System.Windows.Forms.ComboBox comboBoxOption5;
-        private System.Windows.Forms.ComboBox comboBoxOption4;
-        private System.Windows.Forms.ComboBox comboBoxOption3;
-        private System.Windows.Forms.ComboBox comboBoxOption2;
+        private System.Windows.Forms.ComboBox comboBoxYear;
+        private System.Windows.Forms.ComboBox comboBoxTipoNomina;
+        private System.Windows.Forms.ComboBox comboBoxPeriodoNomina;
+        private System.Windows.Forms.ComboBox comboBoxPeriodoID;
     }
 }
 

@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-//https://stackoverflow.com/questions/23386078/how-to-remove-conditions-from-where-clause-if-parameters-are-null SQL NULL PARAMS / KEKW
-//https://www.tutorialgateway.org/sql-query-to-select-all-if-parameter-is-empty-or-null/ <- Use this first (:
 
 namespace Reporteador_CR
 {
@@ -18,7 +8,7 @@ namespace Reporteador_CR
         public class ComboBoxItems
         {
             public string Text { get; set; }
-            public object Value { get; set; }
+            public int Value { get; set; }
 
             public override string ToString()
             {
@@ -29,11 +19,17 @@ namespace Reporteador_CR
         DataSetDefault dataSet = new DataSetDefault();
         //DataSets para los Crystal Reports
         DataSetDefaultTableAdapters.NominaAbiertaTableAdapter adapterNominaAbierta = new DataSetDefaultTableAdapters.NominaAbiertaTableAdapter();
+        DataSetDefaultTableAdapters.NominaCerradaTableAdapter adapterNominaCerrada = new DataSetDefaultTableAdapters.NominaCerradaTableAdapter();
         //DataSets para ComboBoxes
         DataSetDefaultTableAdapters.NomCalculoAnoTableAdapter adapterNomCalculoAno = new DataSetDefaultTableAdapters.NomCalculoAnoTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoPerIDTableAdapter adapterNomCalculoPerID = new DataSetDefaultTableAdapters.NomCalculoPerIDTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoTipoNomTableAdapter adapterNomCalculoTipoNom = new DataSetDefaultTableAdapters.NomCalculoTipoNomTableAdapter();
         DataSetDefaultTableAdapters.NomCalculoPeriodoTableAdapter adapterNomCalculoPeriodo = new DataSetDefaultTableAdapters.NomCalculoPeriodoTableAdapter();
+        //
+        DataSetDefaultTableAdapters.NomCalculoHAnoTableAdapter adapterNomCalculoHAno = new DataSetDefaultTableAdapters.NomCalculoHAnoTableAdapter();
+        DataSetDefaultTableAdapters.NomCalculoHPerIDTableAdapter adapterNomCalculoHPerID = new DataSetDefaultTableAdapters.NomCalculoHPerIDTableAdapter();
+        DataSetDefaultTableAdapters.NomCalculoHTipoNomTableAdapter adapterNomCalculoHTipoNom = new DataSetDefaultTableAdapters.NomCalculoHTipoNomTableAdapter();
+        DataSetDefaultTableAdapters.NomCalculoHPeriodoTableAdapter adapterNomCalculoHPeriodo = new DataSetDefaultTableAdapters.NomCalculoHPeriodoTableAdapter();
         public ReporteadorNomina()
         {
             InitializeComponent();
@@ -43,15 +39,13 @@ namespace Reporteador_CR
 
             //No mostrar los campos de filtrado al iniciar el programa
             labelOption1.Hide();
-            comboBoxOption1.Hide();
+            comboBoxYear.Hide();
             labelOption2.Hide();
-            comboBoxOption2.Hide();
+            comboBoxPeriodoID.Hide();
             labelOption3.Hide();
-            comboBoxOption3.Hide();
+            comboBoxPeriodoNomina.Hide();
             labelOption4.Hide();
-            comboBoxOption4.Hide();
-            labelOption5.Hide();
-            comboBoxOption5.Hide();
+            comboBoxTipoNomina.Hide();
             btnReporte.Hide();
             btnLimpiar.Hide();
             label2.Hide();
@@ -65,26 +59,32 @@ namespace Reporteador_CR
             btnLimpiar.Show();
             label2.Show();
 
-        #region Nomina-Abierta
+            //Limpiar los combo box antes de introducir nuevos datos.
+            comboBoxYear.Items.Clear();
+            comboBoxPeriodoID.Items.Clear();
+            comboBoxPeriodoNomina.Items.Clear();
+            comboBoxTipoNomina.Items.Clear();
+
+            #region Nomina-Abierta
             //Nomina Abierta
             //Mostrar las opciones correspondientes para el Reporte
             if (cbxSelecionReporte.Text == "Nomina Abierta")
             {
                 labelOption1.Text = "Año";
                 labelOption1.Show();
-                comboBoxOption1.Show();
+                comboBoxYear.Show();
 
                 labelOption2.Text = "Periodo ID";
                 labelOption2.Show();
-                comboBoxOption2.Show();
+                comboBoxPeriodoID.Show();
 
                 labelOption3.Text = "Periodo Nomina";
                 labelOption3.Show();
-                comboBoxOption3.Show();
+                comboBoxPeriodoNomina.Show();
 
                 labelOption4.Text = "Tipo Nomina";
                 labelOption4.Show();
-                comboBoxOption4.Show();
+                comboBoxTipoNomina.Show();
 
                 //Llenar los campos para los combo box
                 try
@@ -94,34 +94,37 @@ namespace Reporteador_CR
                     adapterNomCalculoAno.Fill(dataSet.NomCalculoAno);
                     for (int i = 0; i < dataSet.NomCalculoAno.Rows.Count; i++)
                     {
-                        comboBoxOption1.Items.Add(dataSet.NomCalculoAno[i].Ano);
+                        comboBoxYear.Items.Add(dataSet.NomCalculoAno[i].Ano);
                     }
 
                     //Llenar campos para el combo box (Periodo ID)
                     adapterNomCalculoPerID.Fill(dataSet.NomCalculoPerID);
                     for (int i = 0; i < dataSet.NomCalculoPerID.Rows.Count; i++)
                     {
-                        item.Text = dataSet.NomCalculoPerID[i].Periodo_ID + " - ";
+                        /*item.Text = dataSet.NomCalculoPerID[i].Periodo_ID.ToString();
                         item.Value = dataSet.NomCalculoPerID[i].Periodo_ID;
-                        comboBoxOption2.Items.Add(item);
+                        comboBoxPeriodoID.Items.Add(item);*/
+                        comboBoxPeriodoID.Items.Add(dataSet.NomCalculoPerID[i].Periodo_ID);
                     }
 
                     //Llenar campos para el combo box (Periodo Nomina)
                     adapterNomCalculoPeriodo.Fill(dataSet.NomCalculoPeriodo);
                     for (int i = 0; i < dataSet.NomCalculoPeriodo.Rows.Count; i++)
                     {
-                        item.Text = dataSet.NomCalculoPeriodo[i].Periodo + " - ";
+                        /*item.Text = dataSet.NomCalculoPeriodo[i].Periodo + " - ASDASDASDAS" ;
                         item.Value = dataSet.NomCalculoPeriodo[i].Periodo;
-                        comboBoxOption3.Items.Add(item);
+                        comboBoxPeriodoNomina.Items.Add(item);*/
+                        comboBoxPeriodoNomina.Items.Add(dataSet.NomCalculoPeriodo[i].Periodo);
                     }
 
                     //Llenar campos para el combo box (Tipo Nomina)
                     adapterNomCalculoTipoNom.Fill(dataSet.NomCalculoTipoNom);
                     for (int i = 0; i < dataSet.NomCalculoTipoNom.Rows.Count; i++)
                     {
-                        item.Text = dataSet.NomCalculoTipoNom[i].TipoNomina_ID + " - ";
+                        /*item.Text = dataSet.NomCalculoTipoNom[i].TipoNomina_ID + " - ";
                         item.Value = dataSet.NomCalculoTipoNom[i].TipoNomina_ID;
-                        comboBoxOption4.Items.Add(item);
+                        comboBoxTipoNomina.Items.Add(item);*/
+                        comboBoxTipoNomina.Items.Add(dataSet.NomCalculoTipoNom[i].TipoNomina_ID);
                     }
 
                 }
@@ -131,18 +134,86 @@ namespace Reporteador_CR
                     labelError.Show();
                 }
             }
-        #endregion Nomina-Abierta
+            #endregion Nomina-Abierta
 
-        #region Nomina-Cerrada
+            #region Nomina-Cerrada
+            //Nomina Cerrada
+            //Mostrar las opciones correspondientes para el Reporte
+            if (cbxSelecionReporte.Text == "Nomina Cerrada")
+            {
+                labelOption1.Text = "Año";
+                labelOption1.Show();
+                comboBoxYear.Show();
 
-        #endregion Nomina-Cerrada
+                labelOption2.Text = "Periodo ID";
+                labelOption2.Show();
+                comboBoxPeriodoID.Show();
+
+                labelOption3.Text = "Periodo Nomina";
+                labelOption3.Show();
+                comboBoxPeriodoNomina.Show();
+
+                labelOption4.Text = "Tipo Nomina";
+                labelOption4.Show();
+                comboBoxTipoNomina.Show();
+
+                //Llenar los campos para los combo box
+                try
+                {
+                    ComboBoxItems item = new ComboBoxItems();
+                    //Llenar campos para el combo box (Año)
+                    adapterNomCalculoHAno.Fill(dataSet.NomCalculoHAno);
+                    for (int i = 0; i < dataSet.NomCalculoHAno.Rows.Count; i++)
+                    {
+                        comboBoxYear.Items.Add(dataSet.NomCalculoHAno[i].Ano);
+                    }
+
+                    //Llenar campos para el combo box (Periodo ID)
+                    adapterNomCalculoHPerID.Fill(dataSet.NomCalculoHPerID);
+                    for (int i = 0; i < dataSet.NomCalculoHPerID.Rows.Count; i++)
+                    {
+                        /*item.Text = dataSet.NomCalculoPerID[i].Periodo_ID.ToString();
+                        item.Value = dataSet.NomCalculoPerID[i].Periodo_ID;
+                        comboBoxPeriodoID.Items.Add(item);*/
+                        comboBoxPeriodoID.Items.Add(dataSet.NomCalculoHPerID[i].Periodo_ID);
+                    }
+
+                    //Llenar campos para el combo box (Periodo Nomina)
+                    adapterNomCalculoHPeriodo.Fill(dataSet.NomCalculoHPeriodo);
+                    for (int i = 0; i < dataSet.NomCalculoHPeriodo.Rows.Count; i++)
+                    {
+                        /*item.Text = dataSet.NomCalculoPeriodo[i].Periodo + " - ASDASDASDAS" ;
+                        item.Value = dataSet.NomCalculoPeriodo[i].Periodo;
+                        comboBoxPeriodoNomina.Items.Add(item);*/
+                        comboBoxPeriodoNomina.Items.Add(dataSet.NomCalculoHPeriodo[i].Periodo);
+                    }
+
+                    //Llenar campos para el combo box (Tipo Nomina)
+                    adapterNomCalculoHTipoNom.Fill(dataSet.NomCalculoHTipoNom);
+                    for (int i = 0; i < dataSet.NomCalculoHTipoNom.Rows.Count; i++)
+                    {
+                        /*item.Text = dataSet.NomCalculoTipoNom[i].TipoNomina_ID + " - ";
+                        item.Value = dataSet.NomCalculoTipoNom[i].TipoNomina_ID;
+                        comboBoxTipoNomina.Items.Add(item);*/
+                        comboBoxTipoNomina.Items.Add(dataSet.NomCalculoHTipoNom[i].TipoNomina_ID);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    labelError.Text = ex.Message;
+                    labelError.Show();
+                }
+            }
+            #endregion Nomina-Cerrada
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
+            CrystalReport_NominaAbierta crNominaAbierta = new CrystalReport_NominaAbierta();
+            CrystalReport_NominaCerrada crNominaCerrada = new CrystalReport_NominaCerrada();
             try
             {
-                CrystalReport_NominaAbierta crNominaAbierta = new CrystalReport_NominaAbierta();
                 string dir = "";
                 int year = 0;
                 int periodoID = 0;
@@ -154,64 +225,118 @@ namespace Reporteador_CR
                     dir = @"~\CrystalReport-NominaAbierta.rpt";
                     
                     //Asignar Variables selecionadas de los ComboBox
-                    if (comboBoxOption1.SelectedItem != null)
+                    if (comboBoxYear.SelectedItem != null)
                     {
-                        year = Convert.ToInt32(comboBoxOption1.SelectedItem);
+                        year = Convert.ToInt32(comboBoxYear.SelectedItem);
                     }
                     else
                     {
                         year = 0;
                     }
-                    if(comboBoxOption2.SelectedItem != null)
+
+                    if(comboBoxPeriodoID.SelectedItem != null)
                     {
-                        periodoID = Convert.ToInt16((comboBoxOption2.SelectedItem as ComboBoxItems).Value);
+                        //periodoID = Convert.ToInt16((comboBoxPeriodoID.SelectedItem as ComboBoxItems).Value);
+                        periodoID = Convert.ToSByte(comboBoxPeriodoID.SelectedItem);
                     }
                     else
                     {
                         periodoID = 0;
                     }
-                    if (comboBoxOption3.SelectedItem != null)
+
+                    if (comboBoxPeriodoNomina.SelectedItem != null)
                     {
-                        periodoNomina = Convert.ToInt32((comboBoxOption3.SelectedItem as ComboBoxItems).Value);
+                        //periodoNomina = Convert.ToInt32((comboBoxPeriodoNomina.SelectedItem as ComboBoxItems).Value);
+                        periodoNomina = Convert.ToInt32(comboBoxPeriodoNomina.SelectedItem);
                     }
                     else
                     {
                         periodoNomina = 0;
                     }
-                    if (comboBoxOption4.SelectedItem != null)
+
+                    if (comboBoxTipoNomina.SelectedItem != null)
                     {
-                        tipoNomina = Convert.ToInt32((comboBoxOption4.SelectedItem as ComboBoxItems).Value);
+                        //tipoNomina = Convert.ToInt32((comboBoxTipoNomina.SelectedItem as ComboBoxItems).Value);
+                        tipoNomina = Convert.ToInt32(comboBoxTipoNomina.SelectedItem);
                     }
                     else
                     {
                         tipoNomina = 0;
                     }
-
                     //Pasar las variables selecionadas de los ComboBox al adaptador de NominaAbierta.
                     //Ejecuta la query SQL y filta los datos con los campos proporcionados.
                     adapterNominaAbierta.Fill(dataSet.NominaAbierta,
                         Convert.ToInt16(year),
-                        Convert.ToByte(periodoID)
-                        /*Convert.ToInt16(periodoNomina),
-                        Convert.ToByte(tipoNomina)*/
+                        Convert.ToByte(periodoID),
+                        Convert.ToInt16(periodoNomina),
+                        Convert.ToByte(tipoNomina)
                         );
 
                     //Generar y mostrar el Report CrystalReport
-                    labelError.Text = periodoID.ToString();
-                    labelError.Show();
                     crNominaAbierta.Load(dir);
                     crNominaAbierta.SetDataSource(dataSet);
                     crystalReportViewer1.ReportSource = crNominaAbierta;
                     crystalReportViewer1.RefreshReport();
                 }
-            #endregion Generar NominaAbierta
+                #endregion Generar NominaAbierta
 
-            #region Generar NominaCerrada
+                #region Generar NominaCerrada
                 else if (cbxSelecionReporte.Text == "Nomina Cerrada")
                 {
+                    dir = @"~\CrystalReport-NominaCerrada.rpt";
 
+                    //Asignar Variables selecionadas de los ComboBox
+                    if (comboBoxYear.SelectedItem != null)
+                    {
+                        year = Convert.ToInt32(comboBoxYear.SelectedItem);
+                    }
+                    else
+                    {
+                        year = 0;
+                    }
+                    if (comboBoxPeriodoID.SelectedItem != null)
+                    {
+                        //periodoID = Convert.ToInt16((comboBoxPeriodoID.SelectedItem as ComboBoxItems).Value);
+                        periodoID = Convert.ToSByte(comboBoxPeriodoID.SelectedItem);
+                    }
+                    else
+                    {
+                        periodoID = 0;
+                    }
+                    if (comboBoxPeriodoNomina.SelectedItem != null)
+                    {
+                        //periodoNomina = Convert.ToInt32((comboBoxPeriodoNomina.SelectedItem as ComboBoxItems).Value);
+                        periodoNomina = Convert.ToInt32(comboBoxPeriodoNomina.SelectedItem);
+                    }
+                    else
+                    {
+                        periodoNomina = 0;
+                    }
+                    if (comboBoxTipoNomina.SelectedItem != null)
+                    {
+                        //tipoNomina = Convert.ToInt32((comboBoxTipoNomina.SelectedItem as ComboBoxItems).Value);
+                        tipoNomina = Convert.ToInt32(comboBoxTipoNomina.SelectedItem);
+                    }
+                    else
+                    {
+                        tipoNomina = 0;
+                    }
+                    //Pasar las variables selecionadas de los ComboBox al adaptador de NominaAbierta.
+                    //Ejecuta la query SQL y filta los datos con los campos proporcionados.
+                    adapterNominaCerrada.Fill(dataSet.NominaCerrada,
+                        Convert.ToInt16(year),
+                        Convert.ToByte(periodoID),
+                        Convert.ToInt16(periodoNomina),
+                        Convert.ToByte(tipoNomina)
+                        );
+
+                    //Generar y mostrar el Report CrystalReport
+                    crNominaCerrada.Load(dir);
+                    crNominaCerrada.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = crNominaCerrada;
+                    crystalReportViewer1.RefreshReport();
                 }
-            #endregion Generar NominaCerrada
+                #endregion Generar NominaCerrada
 
                 else
                 {
@@ -227,11 +352,17 @@ namespace Reporteador_CR
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            comboBoxOption1.ResetText();
-            comboBoxOption2.ResetText();
-            comboBoxOption3.ResetText();
-            comboBoxOption4.ResetText();
-            comboBoxOption5.ResetText();
+            comboBoxYear.ResetText();
+            comboBoxYear.SelectedItem = null;
+            comboBoxPeriodoID.ResetText();
+            comboBoxPeriodoID.SelectedItem = null;
+            comboBoxPeriodoNomina.ResetText();
+            comboBoxPeriodoNomina.SelectedItem = null;
+            comboBoxTipoNomina.ResetText();
+            comboBoxTipoNomina.SelectedItem = null;
+            //Descargar el reporte actual del ReportViewer
+            crystalReportViewer1.ReportSource = null;
+            crystalReportViewer1.RefreshReport();
         }
     }
 }

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Reporteador_CR</RootNamespace>
     <AssemblyName>Reporteador-CR</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -58,6 +58,12 @@
       <DependentUpon>CrystalReport-NominaAbierta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport-NominaCerrada.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport-NominaCerrada.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSetDefault.cs">
       <DependentUpon>DataSetDefault.xsd</DependentUpon>
     </Compile>
@@ -77,6 +83,10 @@
     <EmbeddedResource Include="CrystalReport-NominaAbierta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport-NominaAbierta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport-NominaCerrada.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport-NominaCerrada.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteadorNomina.resx">
       <DependentUpon>ReporteadorNomina.cs</DependentUpon>

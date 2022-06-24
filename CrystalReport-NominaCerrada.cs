@@ -16,14 +16,14 @@ namespace Reporteador_CR {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport_NominaAbierta : ReportClass {
+    public class CrystalReport_NominaCerrada : ReportClass {
         
-        public CrystalReport_NominaAbierta() {
+        public CrystalReport_NominaCerrada() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport-NominaAbierta.rpt";
+                return "CrystalReport-NominaCerrada.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Reporteador_CR {
         
         public override string FullResourceName {
             get {
-                return "Reporteador_CR.CrystalReport-NominaAbierta.rpt";
+                return "Reporteador_CR.CrystalReport-NominaCerrada.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Reporteador_CR {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport_NominaAbierta : Component, ICachedReport {
+    public class CachedCrystalReport_NominaCerrada : Component, ICachedReport {
         
-        public CachedCrystalReport_NominaAbierta() {
+        public CachedCrystalReport_NominaCerrada() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Reporteador_CR {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport_NominaAbierta rpt = new CrystalReport_NominaAbierta();
+            CrystalReport_NominaCerrada rpt = new CrystalReport_NominaCerrada();
             rpt.Site = this.Site;
             return rpt;
         }
