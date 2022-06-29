@@ -212,6 +212,7 @@ namespace Reporteador_CR
         {
             CrystalReport_NominaAbierta crNominaAbierta = new CrystalReport_NominaAbierta();
             CrystalReport_NominaCerrada crNominaCerrada = new CrystalReport_NominaCerrada();
+            labelError.Hide();
             try
             {
                 string dir = "";
