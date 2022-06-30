@@ -16,7 +16,7 @@ namespace Reporteador_CR
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteadorNomina());
+            Application.Run(new MenuPrincipal());
         }
     }
 }
