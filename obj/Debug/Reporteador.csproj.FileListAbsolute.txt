@@ -85,3 +85,7 @@ C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador.csproj.Cop
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador-CR.exe
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador-CR.pdb
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador_CR.MenuPrincipal.resources
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Debug\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Debug\Reporteador-CR.application
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Debug\Reporteador-CR.application

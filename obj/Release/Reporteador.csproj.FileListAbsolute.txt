@@ -57,3 +57,7 @@ C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador.csproj.C
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.exe
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.pdb
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador_CR.MenuPrincipal.resources
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Release\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Release\Reporteador-CR.application
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.application
