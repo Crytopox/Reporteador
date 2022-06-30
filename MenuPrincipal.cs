@@ -17,7 +17,7 @@ namespace Reporteador_CR
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnReporteadorNomina_Click(object sender, EventArgs e)
         {
             ReporteadorNomina repNom = new ReporteadorNomina();
             repNom.Show();
