@@ -19,8 +19,14 @@ namespace Reporteador_CR
 
         private void btnReporteadorNomina_Click(object sender, EventArgs e)
         {
-            ReporteadorNomina repNom = new ReporteadorNomina();
-            repNom.Show();
+            ReporteadorNomina reporteadorNomina = new ReporteadorNomina();
+            reporteadorNomina.Show();
+        }
+
+        private void btnReporteadorVacaciones_Click(object sender, EventArgs e)
+        {
+            ReporteadorVacaciones reporteadorVacaciones = new ReporteadorVacaciones();
+            reporteadorVacaciones.Show();
         }
     }
 }

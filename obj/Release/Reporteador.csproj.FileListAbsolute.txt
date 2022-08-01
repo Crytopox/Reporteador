@@ -61,3 +61,9 @@ C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Release\Reporteador-CR.exe.m
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\bin\Release\Reporteador-CR.application
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.exe.manifest
 C:\Users\cryto\Desktop\Reporteador-Proyecto\dev\obj\Release\Reporteador-CR.application
+C:\Users\cryto\Desktop\Reporteador\dev\bin\Release\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador\dev\bin\Release\Reporteador-CR.application
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Release\Reporteador_CR.MenuPrincipal.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Release\Reporteador_CR.ReporteadorVacaciones.resources
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Release\Reporteador-CR.exe.manifest
+C:\Users\cryto\Desktop\Reporteador\dev\obj\Release\Reporteador-CR.application
