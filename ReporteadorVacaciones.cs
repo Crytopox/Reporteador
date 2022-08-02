@@ -46,18 +46,22 @@ namespace Reporteador_CR
                 {
                     cbxMes.Items.Add(dataSetVac.VacacionesMes[i].Mes);
                 }
+
                 //ComboBox TrabajadorID
+                Dictionary<string, string> cbxData = new Dictionary<string, string>();
                 adapterVacacionesTrabID.Fill(dataSetVac.VacacionesTrabID);
                 for(int i = 0; i < dataSetVac.VacacionesTrabID.Rows.Count; i++)
                 {
-                    string trabajador = "test";
-                    //PENDING //trabajador = dataSetVac.VacacionesTrabID[i].TrabID + " - " + dataSetVac.VacacionesTrabID[i].Nombre;
-                    cbxTrabajador.DisplayMember = trabajador;
-                    cbxTrabajador.ValueMember = dataSetVac.VacacionesTrabID[i].TrabID;
-
+                    string id = dataSetVac.VacacionesTrabID[i].TrabID;
+                    string name = id + " - " + dataSetVac.VacacionesTrabID[i].TrabID;
+                    cbxData.Add(id, name);
                     //OLD
                     //cbxTrabajador.Items.Add(dataSetVac.VacacionesTrabID[i].TrabID);
                 }
+                cbxTrabajador.DataSource = new BindingSource(cbxData, null);
+                cbxTrabajador.DisplayMember = "Value";
+                cbxTrabajador.ValueMember = "Key";
+
                 //ComboBox TipoSolicitud
                 adapterVacacionesTipoSolicitud.Fill(dataSetVac.VacacionesTipoSolicitud);
                 for(int i = 0; i < dataSetVac.VacacionesTipoSolicitud.Rows.Count; i++)
@@ -101,7 +105,7 @@ namespace Reporteador_CR
                 string dir = @"~\CrystalReports\CrystalReport-Vacaciones.rpt"; ;
                 int año = 0;
                 int mes = 0;
-                int trabID = 0;
+                string trabID = "";
                 string tipoSolicitud = "";
 
                 //Asignar valor de los ComboBox selecionados
@@ -126,11 +130,11 @@ namespace Reporteador_CR
                 //ComboBox TrabID
                 if(cbxTrabajador.SelectedItem != null)
                 {
-                    trabID = Convert.ToInt32(cbxTrabajador.SelectedItem);
+                    trabID = ((KeyValuePair<string, string>)cbxTrabajador.SelectedItem).Key;
                 }
                 else
                 {
-                    trabID = 0;
+                    trabID = "0";
                 }
                 //ComboBox TipoSolicitud
                 if(cbxTipoSolicitud.SelectedItem != null)
@@ -146,7 +150,7 @@ namespace Reporteador_CR
                 adapterVacaciones.Fill(dataSetVac.Vacaciones,
                     año,
                     mes,
-                    Convert.ToString(trabID),
+                    trabID,
                     tipoSolicitud
                     );
 
